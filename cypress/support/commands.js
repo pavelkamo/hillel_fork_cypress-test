@@ -35,3 +35,37 @@
 //     }
 //   }
 // }
+
+
+
+
+Cypress.Commands.add('clickMenuByName', (name) => {
+  cy.log('from custom command clickMenuByName')
+  cy.get('nb-sidebar nb-menu').contains(name).click()
+})
+
+Cypress.Commands.add('forceClick', {prevSubject: 'element'}, (subject) => {
+  cy.wrap(subject).click({force: true})
+})
+
+Cypress.Commands.add('login', (email, password) => { 
+  cy.get('#input-email').type(email)
+  cy.get('#input-password').type(password)
+  cy.get('form button[status="primary"]').click()
+})
+
+
+Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
+  if (options && options.sensitive) {
+    // turn off original log
+    options.log = false
+    // create our own log with masked message
+    Cypress.log({
+      $el: element,
+      name: 'type',
+      message: '*'.repeat(text.length),
+    })
+  }
+
+  return originalFn(element, text, options)
+})
