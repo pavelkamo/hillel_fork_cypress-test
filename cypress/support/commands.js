@@ -48,11 +48,11 @@ Cypress.Commands.add('forceClick', {prevSubject: 'element'}, (subject) => {
   cy.wrap(subject).click({force: true})
 })
 
-// Cypress.Commands.add('login', (email, password) => { 
-//   cy.get('#input-email').type(email)
-//   cy.get('#input-password').type(password)
-//   cy.get('form button[status="primary"]').click()
-// })
+Cypress.Commands.add('login', (email, password) => { 
+  cy.get('#input-email').type(email)
+  cy.get('#input-password').type(password)
+  cy.get('form button[status="primary"]').click()
+})
 
 
 Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
@@ -68,11 +68,4 @@ Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
   }
 
   return originalFn(element, text, options)
-})
-
-
-Cypress.Commands.add('login', (email, password, radioButton) => { 
-  cy.get('input[data-cy="imputEmail1"]').type(email)
-  
-
 })
