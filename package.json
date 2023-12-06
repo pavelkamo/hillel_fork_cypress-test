@@ -29,8 +29,9 @@
     "docs:serve": "compodoc -p src/tsconfig.app.json -d docs -s",
     "prepush": "npm run lint:ci",
     "release:changelog": "npm run conventional-changelog -- -p angular -i CHANGELOG.md -s",
-    "cy:open": "npx cypress open ",
-    "cy:run": "npx cypress run"
+    "cy:open": "npx cypress open",
+    "cy:run": "npx cypress run",
+    "cy:open:stag": "npx cypress open --env WORK_ENV=staging"
   },
   "dependencies": {
     "@agm/core": "^1.1.0",

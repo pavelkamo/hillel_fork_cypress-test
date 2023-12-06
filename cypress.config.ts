@@ -18,6 +18,8 @@ export default defineConfig({
   responseTimeout: 30000,         // default 30000
   // watchForFileChanges: false,
   env: {
-    password: process.env.PASS
+    POST: '4200',
+    WORK_ENV: 'dev',
+    password: 'qwerty'
   }
 });
