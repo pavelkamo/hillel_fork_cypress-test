@@ -69,3 +69,13 @@ Cypress.Commands.overwrite('type', (originalFn, element, text, options) => {
 
   return originalFn(element, text, options)
 })
+
+
+Cypress.Commands.add('loginViaAPI', (email, password) => { 
+  cy.request('POST', 'https://qauto.forstudy.space/api/auth/signin', {
+    "email": email,
+    "password": password,
+    "remember": false
+  })
+  cy.visit('https://guest:welcome2qauto@qauto.forstudy.space/')
+})

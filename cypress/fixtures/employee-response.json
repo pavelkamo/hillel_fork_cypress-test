@@ -1,0 +1,28 @@
+{
+  "statusCode": 201,
+  "body": {
+    "data": [
+    {
+        "empNumber": 90,
+        "lastName": "Test",
+        "firstName": "Artem",
+        "middleName": "Serhiyovich",
+        "employeeId": "1",
+        "terminationId": null,
+        "jobTitle": {
+            "id": null,
+            "title": "QA",
+            "isDeleted": null
+        },
+        "subunit": {
+            "id": null,
+            "name": null
+        },
+        "empStatus": {
+            "id": null,
+            "name": null
+        },
+        "supervisors": []
+    }]
+  }
+}
