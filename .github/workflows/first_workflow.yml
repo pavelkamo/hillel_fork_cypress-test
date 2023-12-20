@@ -1,5 +1,13 @@
 name: e2e tests
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - ".github/workflows/*"
+  pull_request:
+    types: [opened, edited, reopened]
 
 jobs:
   cypress_run:
@@ -15,7 +23,7 @@ jobs:
         if: always()
         run: npm run report:all
       - name: Archive code coverage results
-        if: always()
+        if: failure() || success()
         uses: actions/upload-artifact@v3
         with:
           name: test-report
