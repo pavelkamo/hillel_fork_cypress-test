@@ -113,6 +113,7 @@
     "moment": "^2.29.4",
     "mysql": "github:mysqljs/mysql",
     "npm-run-all": "4.0.2",
+    "prettier": "^3.1.1",
     "rimraf": "2.6.1",
     "run-script-os": "^1.1.6",
     "start-server-and-test": "^2.0.3",

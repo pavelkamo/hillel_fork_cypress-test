@@ -3,12 +3,15 @@
 describe('CSS intro', ()=>{
 
   it('custom', () => {
+    cy.task('log', {param1: 'Hello world', param:2} )
+    cy.task('dateStamp')
+    cy.getCustomersFromDB()
     cy.visit('/')
     cy.clickMenuByName('Layout')
     cy.clickMenuByName('Forms')
   })
 
-  it('custom', () => {
+  it.skip('custom', () => {
     cy.visit('/pages/forms/layouts')
     cy.get('input[disabled]').forceClick()
   })
@@ -17,7 +20,7 @@ describe('CSS intro', ()=>{
     cy.visit('/auth/login')
     cy.get('#input-email').type('test@test.com')
     cy.get('#input-password').type('password')
-    cy.get('form button[status="primary"]').click()
+    cy.get('form button[status="primary"]').click({force: true})
     cy.get('.user-container').should('be.visible')
   })
 

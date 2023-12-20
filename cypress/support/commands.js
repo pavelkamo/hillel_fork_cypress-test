@@ -79,3 +79,9 @@ Cypress.Commands.add('loginViaAPI', (email, password) => {
   })
   cy.visit('https://guest:welcome2qauto@qauto.forstudy.space/')
 })
+
+Cypress.Commands.add('getCustomersFromDB', () => { 
+  cy.task('queryDB', 'SELECT * FROM shop.customer;').then(res => {
+    cy.task('log', res)
+  })
+})
