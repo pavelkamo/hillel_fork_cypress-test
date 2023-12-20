@@ -12,4 +12,11 @@ jobs:
       - name: Run server and tests
         run: npm run cy:run:server
       - name: Create report
+        if: always()
         run: npm run report:all
+      - name: Archive code coverage results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: mochawesome-report/
