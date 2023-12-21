@@ -1,0 +1,21 @@
+name: Cypress run
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - ".github/workflows/*"
+  pull_request:
+    types: [opened, edited, reopened]
+
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get project code
+        uses: actions/checkout@v4
+      - name: Install depandencies
+        run: npm i --force
+      - name: Run server and test
+        run: npm run cy:run:server
