@@ -3,13 +3,13 @@ on:
   schedule:
     - cron: '0 8 * * 2'
   workflow_dispatch:
-  push:
-    branches:
-      - master
-    paths-ignore:
-      - ".github/workflows/*"
-  pull_request:
-    types: [opened, edited, reopened]
+  # push:
+  #   branches:
+  #     - master
+  #   paths-ignore:
+  #     - ".github/workflows/*"
+  # pull_request:
+  #   types: [opened, edited, reopened]
 
 env:
   WORK_ENV: prod
