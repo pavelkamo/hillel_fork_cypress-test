@@ -55,6 +55,7 @@ export default defineConfig({
   env: {
     POST: '4200',
     WORK_ENV: 'dev',
-    password: 'qwerty'
+    password: 'qwerty',
+    ...process.env,
   }
 });

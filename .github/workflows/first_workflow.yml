@@ -1,5 +1,7 @@
 name: e2e tests
 on: 
+  schedule:
+    - cron: '0 8 * * 2'
   workflow_dispatch:
   push:
     branches:
@@ -8,6 +10,10 @@ on:
       - ".github/workflows/*"
   pull_request:
     types: [opened, edited, reopened]
+
+env:
+  WORK_ENV: prod
+  USER: ${{secrets.USER}}
 
 jobs:
   cypress_run:
