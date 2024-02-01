@@ -1,34 +1,38 @@
 /// <reference types="cypress" />
 
-import { ForgotPasswordPage } from "../page/ForgorPasswordPage.js";
+import {ForgotPasswordPage} from "../page/ForgorPasswordPage.js";
+import {LoginPage} from "../page/LoginPage.js";
+import {RegistrationPage} from "../page/RegistrationPage"
 
-describe ('Forgot Password tests', () => {
-    const forgotPassword = new ForgotPasswordPage();
+describe('Forgot Password tests', () => {
+  const forgotPassword = new ForgotPasswordPage();
+  const loginPage = new LoginPage();
+  const registrationPage = new RegistrationPage();
 
-    it('Email Input length validation error message visability', () => {
-        cy.visit('/auth/request-password')
-        forgotPassword.elements.emailInput().type('bo@$%')
-        forgotPassword.elements.forgotPasswordTitle().click()
-        cy.contains('[class="caption status-danger"]', 'Email should be the real one!').should('be.visible')
-    })
+  it('Email Input length validation error message visability', () => {
+    forgotPassword.open()
+    forgotPassword.elements.emailInput().type('bo@$%')
+    forgotPassword.elements.forgotPasswordTitle().click()
+    forgotPassword.elements.emailInputError().contains(forgotPassword.elements.emailInputErrorMessage).should('be.visible');
+  })
 
-    it('Email Input required validation error message visability', () => {
-        cy.visit('/auth/request-password')
-        forgotPassword.elements.emailInput().click()
-        forgotPassword.elements.forgotPasswordTitle().click()
-        cy.contains('[class="caption status-danger"]', 'Email is required!').should('be.visible')
-    })
+  it('Email Input required validation error message visability', () => {
+    forgotPassword.open()
+    forgotPassword.elements.emailInput().click()
+    forgotPassword.elements.forgotPasswordTitle().click()
+    forgotPassword.elements.emailInputError().contains(forgotPassword.elements.emailInputEmptyErrorMessage).should('be.visible');
+  })
 
 
     it('Back to Login button route is correct', () => {
-        cy.visit('/auth/request-password')
-        forgotPassword.elements.backToLoginButton().click()
-        cy.get('nb-login [id="title"]').should('be.visible')
+        forgotPassword.open();
+        forgotPassword.elements.backToLoginButton().click();
+        loginPage.elements.loginTitle().should('be.visible');
     })
 
     it('Register button route is correct', () => {
-        cy.visit('/auth/request-password')
-        forgotPassword.elements.registerButton().click()
-        cy.get('nb-register [id="title"]').should('be.visible')
+        forgotPassword.open();
+        forgotPassword.elements.registerButton().click();
+        registrationPage.elements.registerTitle().should('be.visible');
     })
 })

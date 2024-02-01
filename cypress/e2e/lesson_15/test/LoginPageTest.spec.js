@@ -1,32 +1,45 @@
 /// <reference types="cypress" />
 
-import { LoginPage } from "../page/LoginPage.js";
+import {LoginPage} from "../page/LoginPage.js";
+import {LoginedUserPage} from "../page/LoginedUserPage.js";
 
-describe ('Login tests', () => {
-    const loginPage = new LoginPage();
+describe('Login tests', () => {
+  const loginPage = new LoginPage();
+  const loginUserPage = new LoginedUserPage();
 
-    it('Email and Password Input length validation error message visability', () => {
-        loginPage.open()
-        loginPage.elements.emailInput().type('bobboenko')
-        loginPage.elements.passwordInput().click()
-        cy.contains('[class="caption status-danger"]', 'Email should be the real one!').should('be.visible')
-        loginPage.elements.passwordInput().type('111')
-        loginPage.elements.rememberMeCheckbox().click()
-        cy.contains('[class="caption status-danger"]', 'Password should contain from 4 to 50 characters').should('be.visible')
-    })
+  it('Email and Password Input length validation error message visability', () => {
+    loginPage.open()
 
-    it('Email and Password Input required validation error message visability', () => {
-        loginPage.open()
-        loginPage.elements.emailInput().click()
-        loginPage.elements.passwordInput().click()
-        cy.contains('[class="caption status-danger"]', 'Email is required!').should('be.visible')
-        loginPage.elements.rememberMeCheckbox().click()
-        cy.contains('[class="caption status-danger"]', 'Password is required!').should('be.visible')
-    })
+    //Do actions
+    loginPage.elements.emailInput().type('bobboenko')
+    loginPage.elements.passwordInput().type('111')
+    loginPage.elements.rememberMeCheckbox().click()
 
-    it('Successful Login with valid data', () => {
-        loginPage.open()
-        loginPage.login(Cypress.env('email'), Cypress.env('user_pass'))
-        cy.get('div[class="user-picture image ng-star-inserted"]').should('be.visible')
-    })
+    //Check error messages
+    loginPage.elements.emailInputError().contains(loginPage.elements.emailInputErrorMessage).should('be.visible');
+    loginPage.elements.passwordInputError().contains(loginPage.elements.passwordInputErrorMessage).should('be.visible');
+  })
+
+  it('Email and Password Input required validation error message visability', () => {
+    loginPage.open()
+
+    //Do actions
+    loginPage.elements.emailInput().click()
+    loginPage.elements.passwordInput().click()
+    loginPage.elements.rememberMeCheckbox().click()
+
+    //Check error messages
+    loginPage.elements.emailInputError().contains(loginPage.elements.emailInputEmptyErrorMessage).should('be.visible');
+    loginPage.elements.passwordInputError().contains(loginPage.elements.passwordInputEmptyErrorMessage).should('be.visible');
+  })
+
+  it('Successful Login with valid data', () => {
+    loginPage.open();
+
+    //Не переношу отримання емейлу та пароля із Cypress.env бо краще мати нормальний віддалений конфіг та брати звідти
+    loginPage.login(Cypress.env('email'), Cypress.env('user_pass'));
+
+    //Check is user logined
+    loginUserPage.elements.userIcon().should('be.visible');
+  })
 })
