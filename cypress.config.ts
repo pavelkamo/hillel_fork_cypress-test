@@ -57,5 +57,8 @@ export default defineConfig({
     WORK_ENV: 'dev',
     password: 'qwerty',
     ...process.env,
+    email: 'bobbobenko@mailinator.com',
+    user_pass: 'Test@12345',
+
   }
 });
