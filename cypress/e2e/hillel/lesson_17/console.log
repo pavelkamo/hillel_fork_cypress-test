@@ -1,0 +1,362 @@
+p-kaminskyi@null hillel_fork_cypress-test % npm run qaker:run:server-chrome
+
+> ngx-admin@4.0.1 qaker:run:server-chrome
+> start-test start http-get://localhost:4200/ qaker:run:regression
+
+1: starting server using command "npm run start"
+and when url "[ 'http-get://localhost:4200/' ]" is responding with HTTP status code 200
+running tests using command "npm run qaker:run:regression"
+
+
+> ngx-admin@4.0.1 start
+> run-script-os
+
+
+> ngx-admin@4.0.1 start:darwin:linux
+> export NODE_OPTIONS=--openssl-legacy-provider && ng serve
+
+10% building 3/3 modules 0 active(node:22420) [DEP0111] DeprecationWarning: Access to process.binding('http_parser') is deprecated.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ℹ ｢wds｣: Project is running at http://localhost:4200/webpack-dev-server/
+ℹ ｢wds｣: webpack output is served from /
+ℹ ｢wds｣: 404s will fallback to //index.html
+69% building 495/497 modules 2 active ...inskyi/AquaProjects/hillel_fork_cypress-test/src/app/@theme/styles/styles.scssℹ ｢wdm｣: wait until bundle finished: /
+69% building 706/717 modules 11 active ...lel_fork_cypress-test/src/app/pages/layout/accordion/accordion.component.scssℹ ｢wdm｣: wait until bundle finished: /
+92% additional asset processing copy-webpack-pluginℹ ｢wdm｣: wait until bundle finished: /
+ℹ ｢wdm｣: wait until bundle finished: /
+ℹ ｢wdm｣: wait until bundle finished: /
+ℹ ｢wdm｣: wait until bundle finished: /
+
+chunk {app-pages-pages-module} app-pages-pages-module.js, app-pages-pages-module.js.map (app-pages-pages-module) 274 kB  [rendered]
+chunk {extra-components-extra-components-module} extra-components-extra-components-module.js, extra-components-extra-components-module.js.map (extra-components-extra-components-module) 1.07 MB  [rendered]
+chunk {forms-forms-module} forms-forms-module.js, forms-forms-module.js.map (forms-forms-module) 285 kB  [rendered]
+chunk {layout-layout-module} layout-layout-module.js, layout-layout-module.js.map (layout-layout-module) 290 kB  [rendered]
+chunk {main} main.js, main.js.map (main) 1.55 MB [initial] [rendered]
+chunk {modal-overlays-modal-overlays-module} modal-overlays-modal-overlays-module.js, modal-overlays-modal-overlays-module.js.map (modal-overlays-modal-overlays-module) 1.93 MB  [rendered]
+chunk {polyfills} polyfills.js, polyfills.js.map (polyfills) 482 kB [initial] [rendered]
+chunk {runtime} runtime.js, runtime.js.map (runtime) 9.31 kB [entry] [rendered]
+chunk {scripts} scripts.js, scripts.js.map (scripts) 1.4 MB [entry] [rendered]
+chunk {styles} styles.js, styles.js.map (styles) 3.86 MB [initial] [rendered]
+chunk {tables-tables-module} tables-tables-module.js, tables-tables-module.js.map (tables-tables-module) 1.36 MB  [rendered]
+chunk {vendor} vendor.js, vendor.js.map (vendor) 6.66 MB [initial] [rendered]
+Date: 2024-02-04T22:23:14.688Z - Hash: c9033eb7746f63ebcab4 - Time: 15184ms
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+ℹ ｢wdm｣: Compiled successfully.
+
+> ngx-admin@4.0.1 qaker:run:regression
+> npm run qaker:run:report && npm run qaker:report:all && npm run qaker:report:open
+
+
+> ngx-admin@4.0.1 qaker:run:report
+> npm run qaker:report:delete && npm run qaker:hillel-tests
+
+
+> ngx-admin@4.0.1 qaker:report:delete
+> rm 'cypress/results/*' || true
+
+rm: cypress/results/*: No such file or directory
+
+> ngx-admin@4.0.1 qaker:hillel-tests
+> npx cypress run --spec 'cypress/e2e/hillel/'
+
+
+DevTools listening on ws://127.0.0.1:53920/devtools/browser/72240710-05e7-42aa-981a-40cd12442697
+2024-02-05 00:23:16.657 Cypress[22590:2848805] WARNING: Secure coding is not enabled for restorable state! Enable secure coding by implementing NSApplicationDelegate.applicationSupportsSecureRestorableState: and returning YES.
+Missing baseUrl in compilerOptions. tsconfig-paths will be skipped
+
+====================================================================================================
+
+  (Run Starting)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Cypress:        13.5.1                                                                         │
+  │ Browser:        Electron 114 (headless)                                                        │
+  │ Node Version:   v20.11.0 (/opt/homebrew/Cellar/node@20/20.11.0/bin/node)                       │
+  │ Specs:          6 found (lesson_13/lesson_13.spec.js, lesson_16/apiTest.spec.js, lesson_15/tes │
+  │                 t/DatepickerTest.spec.js, lesson_15/test/ForgotPasswordTest.spec.js, lesson_15 │
+  │                 /test/LoginPageTest.spec.js, lesson_15/test/RegistrationTest.spec.js)          │
+  │ Searched:       cypress/e2e/hillel                                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  lesson_13/lesson_13.spec.js                                                     (1 of 6)
+Browserslist: caniuse-lite is outdated. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+
+
+  Lesson 13: first UI test on Cypress(Task 1)
+    ✓ Task 1.1: change colors - Dark
+    ✓ Task 1.2: change colors - Cosmic
+    ✓ Task 1.3: change colors - Corporate
+    ✓ Task 1.4: change colors - Light
+
+  Lesson 13: first UI test on Cypress(Task 2-4)
+    ✓ Task 2: Text from "Product Details" block visibility
+    ✓ Task 3: Hint of "Right" button is visible
+    ✓ Task 4: Entered Name is contained in "Names" list
+
+
+  7 passing (5s)
+
+[mochawesome] Report JSON saved to /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/results/mochawesome_036.json
+
+[mochawesome] Report HTML saved to /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/results/mochawesome_036.html
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        7                                                                                │
+  │ Passing:      7                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     4 seconds                                                                        │
+  │ Spec Ran:     lesson_13/lesson_13.spec.js                                                      │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Video output: /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/videos/lesson_13/lesson_13.spec.js.mp4
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  lesson_16/apiTest.spec.js                                                       (2 of 6)
+
+
+  API tests
+    ✓ GET request
+    ✓ POST request
+    ✓ PUT request
+    ✓ PATCH request
+    ✓ DELETE request
+
+
+  5 passing (1s)
+
+[mochawesome] Report JSON saved to /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/results/mochawesome_037.json
+
+[mochawesome] Report HTML saved to /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/results/mochawesome_037.html
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        5                                                                                │
+  │ Passing:      5                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     1 second                                                                         │
+  │ Spec Ran:     lesson_16/apiTest.spec.js                                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Video output: /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/videos/lesson_16/apiTest.spec.js.mp4
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  lesson_15/test/DatepickerTest.spec.js                                           (3 of 6)
+
+
+  Date Picker tests
+    ✓ Date Picker visability and verify that input has today date value
+
+
+  1 passing (1s)
+
+[mochawesome] Report JSON saved to /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/results/mochawesome_038.json
+
+[mochawesome] Report HTML saved to /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/results/mochawesome_038.html
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        1                                                                                │
+  │ Passing:      1                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     1 second                                                                         │
+  │ Spec Ran:     lesson_15/test/DatepickerTest.spec.js                                            │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Video output: /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/videos/lesson_15/test/DatepickerTest.spec.js.mp4
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  lesson_15/test/ForgotPasswordTest.spec.js                                       (4 of 6)
+
+
+  Forgot Password tests
+    ✓ Email Input length validation error message visability
+    ✓ Email Input required validation error message visability
+    ✓ Back to Login button route is correct
+    ✓ Register button route is correct
+
+
+  4 passing (2s)
+
+[mochawesome] Report JSON saved to /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/results/mochawesome_039.json
+
+[mochawesome] Report HTML saved to /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/results/mochawesome_039.html
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        4                                                                                │
+  │ Passing:      4                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     2 seconds                                                                        │
+  │ Spec Ran:     lesson_15/test/ForgotPasswordTest.spec.js                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Video output: /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/videos/lesson_15/test/ForgotPasswordTest.spec.js.mp4
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  lesson_15/test/LoginPageTest.spec.js                                            (5 of 6)
+
+
+  Login tests
+    ✓ Email and Password Input length validation error message visability
+    ✓ Email and Password Input required validation error message visability
+    ✓ Successful Login with valid data
+
+
+  3 passing (6s)
+
+[mochawesome] Report JSON saved to /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/results/mochawesome_040.json
+
+[mochawesome] Report HTML saved to /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/results/mochawesome_040.html
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        3                                                                                │
+  │ Passing:      3                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     6 seconds                                                                        │
+  │ Spec Ran:     lesson_15/test/LoginPageTest.spec.js                                             │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Video output: /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/videos/lesson_15/test/LoginPageTest.spec.js.mp4
+
+
+────────────────────────────────────────────────────────────────────────────────────────────────────
+
+  Running:  lesson_15/test/RegistrationTest.spec.js                                         (6 of 6)
+
+
+  Register tests
+    ✓ Each validation error message is visable
+    ✓ Successful Register with valid data
+
+
+  2 passing (6s)
+
+[mochawesome] Report JSON saved to /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/results/mochawesome_041.json
+
+[mochawesome] Report HTML saved to /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/results/mochawesome_041.html
+
+
+  (Results)
+
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ Tests:        2                                                                                │
+  │ Passing:      2                                                                                │
+  │ Failing:      0                                                                                │
+  │ Pending:      0                                                                                │
+  │ Skipped:      0                                                                                │
+  │ Screenshots:  0                                                                                │
+  │ Video:        true                                                                             │
+  │ Duration:     6 seconds                                                                        │
+  │ Spec Ran:     lesson_15/test/RegistrationTest.spec.js                                          │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+
+  (Video)
+
+  -  Video output: /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/videos/lesson_15/test/RegistrationTest.spec.js.mp4
+
+
+====================================================================================================
+
+  (Run Finished)
+
+
+       Spec                                              Tests  Passing  Failing  Pending  Skipped
+  ┌────────────────────────────────────────────────────────────────────────────────────────────────┐
+  │ ✔  lesson_13/lesson_13.spec.js              00:04        7        7        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  lesson_16/apiTest.spec.js                00:01        5        5        -        -        - │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  lesson_15/test/DatepickerTest.spec.      00:01        1        1        -        -        - │
+  │    js                                                                                          │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  lesson_15/test/ForgotPasswordTest.s      00:02        4        4        -        -        - │
+  │    pec.js                                                                                      │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  lesson_15/test/LoginPageTest.spec.j      00:06        3        3        -        -        - │
+  │    s                                                                                           │
+  ├────────────────────────────────────────────────────────────────────────────────────────────────┤
+  │ ✔  lesson_15/test/RegistrationTest.spe      00:06        2        2        -        -        - │
+  │    c.js                                                                                        │
+  └────────────────────────────────────────────────────────────────────────────────────────────────┘
+    ✔  All specs passed!                        00:22       22       22        -        -        -
+
+
+> ngx-admin@4.0.1 qaker:report:all
+> npm run report:merge && npm run report:html
+
+
+> ngx-admin@4.0.1 report:merge
+> npx mochawesome-merge 'cypress/results/*.json' -o 'cypress/merged-report/mochawesome.json'
+
+Reports merged to /Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/cypress/merged-report/mochawesome.json
+
+> ngx-admin@4.0.1 report:html
+> npx marge cypress/merged-report/mochawesome.json
+
+
+✓ Reports saved:
+/Users/p-kaminskyi/AquaProjects/hillel_fork_cypress-test/mochawesome-report/mochawesome.html
+
+> ngx-admin@4.0.1 qaker:report:open
+> open -a 'Google Chrome' mochawesome-report/mochawesome.html

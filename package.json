@@ -38,7 +38,26 @@
     "report:delete": "rm 'cypress/results/*' || true",
     "cy:run:report": "npm run report:delete && npm run cy:smoke-tests",
     "report:all": "npm run report:merge && npm run report:html",
-    "cy:run:server": "start-test start http-get://localhost:4200/ cy:run:report"
+
+    "qaker:hillel:l13-tests": "npx cypress run --spec 'cypress/e2e/hillel/lesson_13/*' ",
+    "qaker:hillel-tests": "npx cypress run --spec 'cypress/e2e/hillel/' ",
+    "qaker:hillel-tests-chrome": "npx cypress run --spec 'cypress/e2e/hillel/' --browser chrome --headed",
+    "qaker:hillel-tests-electron": "npx cypress run --spec 'cypress/e2e/hillel/' --browser electron --headed",
+    "qaker:report:merge": "mochawesome-merge 'cypress/results/*.json' -o mochawesome.json",
+    "qaker:report:html": "npx marge mochawesome.json",
+    "qaker:report:delete": "rm -rf 'cypress/results/*' || true",
+    "qaker:report:open": "open -a 'Google Chrome' mochawesome-report/mochawesome.html",
+    "qaker:report:all": "npm run report:merge && npm run report:html",
+
+
+    "qaker:run:report": "npm run qaker:report:delete && npm run qaker:hillel-tests",
+    "qaker:run:report-chrome": "npm run qaker:report:delete && npm run qaker:hillel-tests-chrome",
+    "qaker:run:regression": "npm run qaker:run:report && npm run qaker:report:all && npm run qaker:report:open",
+    "qaker:run:regression-chrome": "npm run qaker:run:report-chrome && npm run qaker:report:all && npm run qaker:report:open",
+    "qaker:run:regression-hillel": "npx cypress run --spec 'cypress/e2e/hillel/' && npx mochawesome-merge 'cypress/results/*.json' -o mochawesome.json && npx marge mochawesome.json",
+
+    "qaker:run:server": "start-test start http-get://localhost:4200/ qaker:run:regression",
+    "qaker:run:server-chrome": "start-test start http-get://localhost:4200/ qaker:run:regression-chrome"
   },
   "dependencies": {
     "@agm/core": "^1.1.0",

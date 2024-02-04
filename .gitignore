@@ -41,14 +41,11 @@ testem.log
 Thumbs.db
 
 # Cypress
-cypress/videos/
-cypress/screenshots/
+/cypress/results
+/mochawesome-report
+/cypress/videos/
+/cypress/screenshots/
+mochawesome.json
 
 cypress.env.json
-
-# Reporter
-mochawesome-report/
-cypress/results/
-cypress/merged-report/
-
 .env
