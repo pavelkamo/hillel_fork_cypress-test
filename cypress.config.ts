@@ -45,7 +45,7 @@ export default defineConfig({
   },
   screenshotOnRunFailure: true,   // default true
   video: true,                     // default false
-  viewportHeight: 800,            // default 660
+  viewportHeight: 1200,            // default 660
   viewportWidth: 1200,           // default 1200
   // retries: 1,
   defaultCommandTimeout: 5000,   // default 4000
@@ -57,5 +57,8 @@ export default defineConfig({
     WORK_ENV: 'dev',
     password: 'qwerty',
     ...process.env,
+    email: 'bobbobenko@mailinator.com',
+    user_pass: 'Test@12345',
+
   }
 });
