@@ -1,0 +1,31 @@
+name: Cypress run
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, edited, reopened]
+
+
+jobs:
+  cypress_run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Install dependancies
+        run: npm install --force
+      - name: Run server
+        run: npm run qaker:run:server
+      - name: Run tests
+        run: npm run qaker:run:tests
+      - name: Create report
+        if: always()
+        run: npm run qaker:report:all
+      - name: Archive code coverage results
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report
+          path: mochawesome-report/
