@@ -1,4 +1,4 @@
-name: Cypress run
+name: Cypress run L20
 on:
   workflow_dispatch:
   push:
