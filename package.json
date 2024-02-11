@@ -50,14 +50,17 @@
     "qaker:report:all": "npm run report:merge && npm run report:html",
 
 
-    "qaker:run:report": "npm run qaker:report:delete && npm run qaker:hillel-tests",
+    "qaker:run:tests": "npm run qaker:report:delete && npm run qaker:hillel-tests",
     "qaker:run:report-chrome": "npm run qaker:report:delete && npm run qaker:hillel-tests-chrome",
-    "qaker:run:regression": "npm run qaker:run:report && npm run qaker:report:all && npm run qaker:report:open",
+    "qaker:run:regression": "npm run qaker:run:tests && npm run qaker:report:all && npm run qaker:report:open",
     "qaker:run:regression-chrome": "npm run qaker:run:report-chrome && npm run qaker:report:all && npm run qaker:report:open",
     "qaker:run:regression-hillel": "npx cypress run --spec 'cypress/e2e/hillel/' && npx mochawesome-merge 'cypress/results/*.json' -o mochawesome.json && npx marge mochawesome.json",
 
-    "qaker:run:server": "start-test start http-get://localhost:4200/ qaker:run:regression",
-    "qaker:run:server-chrome": "start-test start http-get://localhost:4200/ qaker:run:regression-chrome"
+    "qaker:run:server-redression": "start-test start http-get://localhost:4200/ qaker:run:regression",
+    "qaker:run:server-chrome": "start-test start http-get://localhost:4200/ qaker:run:regression-chrome",
+
+    "qaker:run:server": "start-test start http-get://localhost:4200/"
+
   },
   "dependencies": {
     "@agm/core": "^1.1.0",
