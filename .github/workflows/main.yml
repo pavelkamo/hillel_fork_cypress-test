@@ -10,4 +10,4 @@ jobs:
       - name: Install all dependencies
         run: npm i --force
       - name: Run tests
-        run: npm run cy:run
+        run: qaker:run:server
