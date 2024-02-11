@@ -16,13 +16,13 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependancies
         run: npm install --force
-      - name: Run server and tests and report
+      - name: Run server and tests
         run: npm run qaker:run:server-tests
-#      - name: Create report
-#        if: always()
-#        run: npm run qaker:report:all
+      - name: Create report
+        if: always()
+        run: npm run qaker:report:all
       - name: Archive code coverage results
-#        if: always()
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: test-report
